@@ -17,6 +17,7 @@ import java.util.Date;
 @Data
 public class Product {
     @Id
+
     private int prodId;
     private String prodName;
     private String prodDesc;
