@@ -14,6 +14,8 @@ public class ProductService {
     private ProductRepo repo;
 
     public List<Product> getallproducts() {
+
         return repo.findAll();
+
     }
 }
