@@ -1,11 +1,7 @@
 package com.resident.ecomspring.Model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
+import jakarta.persistence.*;
 
 
 import java.math.BigDecimal;
@@ -22,10 +18,15 @@ public class Product {
     private String brand;
     private BigDecimal price;
     private String category;
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-MM-yyyy")
     private Date releasedate;
     private boolean available;
     private int quantity;
+    private String image;
+    private String imagetype;
+    @Lob
+    private byte[] imagedata;
+
 
     public int getPid() {
         return pid;
@@ -97,5 +98,29 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImagetype() {
+        return imagetype;
+    }
+
+    public void setImagetype(String imagetype) {
+        this.imagetype = imagetype;
+    }
+
+    public byte[] getImagedata() {
+        return imagedata;
+    }
+
+    public void setImagedata(byte[] imagedata) {
+        this.imagedata = imagedata;
     }
 }
